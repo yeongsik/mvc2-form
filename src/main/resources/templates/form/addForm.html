@@ -36,6 +36,23 @@
         </div>
 
         <hr class="my-4">
+        <!-- single checkbox -->
+        <div>판매 여부</div>
+        <div>
+            <div class="form-check">
+                <input type="checkbox" id="open" name="open" class="form-check-input">
+                <input type="hidden" name="_open" value="on" /> <!-- 히든 필드 추가 -->
+                <!--
+                Spring MVC에서 트릭으로 사용 체크박스에 값이 없으면 _open값이 on으로 넘어오면 open부분이 false로 데이터가 들어옴
+                체크박스가 체크되면 open=on &_open=on이 넘어옴 이 때 _open는 무시
+                _open=on만 넘어오면 open값이 체크되지 않았다는 것을 인식 -> Boolean 타입을 찍으보면 false로 넘어옴 ( null이 아니라 )
+
+                매번 이렇게 히든 태그를 만들어서 해야하는가? -> 타임리프가 이를 해결
+
+                -->
+                <label for="open" class="form-check-label">판매 오픈</label>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col">
